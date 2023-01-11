@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+.btn-reset {
+  border: 0;
+  outline: 0;
+  background-color: rgba(128, 128, 128, 0.338);
+  padding: 6px 10px;
+  margin-top: 12px;
+  cursor: pointer;
+}
