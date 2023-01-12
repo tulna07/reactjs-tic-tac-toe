@@ -58,7 +58,7 @@ const Board = ({ size }) => {
 
   return (
     <>
-      <div className="status">{status}</div>
+      <div className={styles.status}>{status}</div>
       <div className={styles.board}>{renderBoard()}</div>
     </>
   );
