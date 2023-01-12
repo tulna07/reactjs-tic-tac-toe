@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 // Components
-import Board from "./components/Board";
+import Game from "./components/Game";
 
 function App() {
   const [version, setVersion] = useState(0);
 
   return (
     <>
-      <Board key={version} size={3} />
-      <button className="btn-reset" onClick={() => setVersion(version + 1)}>
+      <Game key={version} />
+      <button className="reset" onClick={() => setVersion(version + 1)}>
         Reset
       </button>
     </>

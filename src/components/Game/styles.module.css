@@ -1,0 +1,40 @@
+.game {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.step {
+  border: none;
+  outline: none;
+  padding: 5px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.step:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.step.current,
+.step.current:hover {
+  background-color: #80cbc4;
+}
+
+.controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.control {
+  cursor: pointer;
+}

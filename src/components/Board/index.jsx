@@ -6,10 +6,7 @@ import Square from "../Square";
 // Styles
 import styles from "./styles.module.css";
 
-const Board = ({ size }) => {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(size ** 2).fill(null));
-
+const Board = ({ size, xIsNext, squares, onPlay }) => {
   let status = `Next turn: ${xIsNext ? "X" : "O"}`;
 
   const isDraw = checkDraw(squares);
@@ -29,8 +26,7 @@ const Board = ({ size }) => {
 
     const newSquares = [...squares];
     newSquares[itemId] = xIsNext ? "X" : "O";
-    setSquares(newSquares);
-    setXIsNext(!xIsNext);
+    onPlay(newSquares);
   };
 
   const renderBoard = () => {
