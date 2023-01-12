@@ -54,8 +54,8 @@ const Board = ({ size, xIsNext, squares, onPlay }) => {
 
   return (
     <>
-      <div className={styles.status}>{status}</div>
       <div className={styles.board}>{renderBoard()}</div>
+      <div className={styles.status}>{status}</div>
     </>
   );
 };

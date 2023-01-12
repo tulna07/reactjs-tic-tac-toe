@@ -56,12 +56,6 @@ function Game() {
   return (
     <div className={styles.game}>
       <div className={styles.board}>
-        <Board
-          size={SIZE}
-          xIsNext={xIsNext}
-          squares={currentSquares}
-          onPlay={handlePlay}
-        />
         <div className={styles.controls}>
           <FaUndoAlt
             className={styles.control}
@@ -72,6 +66,12 @@ function Game() {
             onClick={() => jumpTo(currentStep + 1)}
           />
         </div>
+        <Board
+          size={SIZE}
+          xIsNext={xIsNext}
+          squares={currentSquares}
+          onPlay={handlePlay}
+        />
       </div>
       <div className={styles.history}>
         <ol className={styles.steps}>{steps}</ol>
