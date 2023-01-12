@@ -11,6 +11,54 @@
   margin-top: -1px;
   padding: 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.square:is(
+    .vertical,
+    .horizontal,
+    .to-left-diagonal,
+    .to-right-diagonal
+  )::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ffeb3b;
+}
+
+.square.vertical::after {
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.square.horizontal::after {
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.square.to-right-diagonal::after {
+  width: calc(100% * 1.45);
+  height: 3px;
+  top: 0;
+  left: 0;
+  rotate: 45deg;
+  transform-origin: 0% 0%;
+}
+
+.square.to-left-diagonal::after {
+  width: 3px;
+  height: calc(100% * 1.45);
+  top: 0;
+  right: 0;
+  rotate: 45deg;
+  transform-origin: 100% 0%;
 }
 
 .square.x {

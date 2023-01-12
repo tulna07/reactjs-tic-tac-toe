@@ -40,7 +40,7 @@ function Game() {
     }
 
     return (
-      <li>
+      <li key={step}>
         <button
           className={`${styles.step} ${
             currentStep === step ? styles.current : null

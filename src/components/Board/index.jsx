@@ -14,7 +14,7 @@ const Board = ({ size, xIsNext, squares, onPlay }) => {
     status = `No one win!!!`;
   }
 
-  const winner = findWinner(squares);
+  const [winner, winningLine, lineForm] = findWinner(squares);
   if (winner) {
     status = `Winner: ${winner}`;
   }
@@ -38,6 +38,8 @@ const Board = ({ size, xIsNext, squares, onPlay }) => {
         rowItems.push(
           <Square
             key={itemId}
+            winningSquare={winningLine?.includes(itemId)}
+            lineForm={lineForm}
             value={squares[itemId]}
             onClick={() => handleClick(itemId)}
           />
@@ -80,13 +82,21 @@ function findWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
   ];
+
+  const lineForm = {
+    1: "horizontal",
+    2: "to-left-diagonal",
+    3: "vertical",
+    4: "to-right-diagonal",
+  };
+
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return [squares[a], lines[i], lineForm[b - a]];
     }
   }
-  return null;
+  return [null, null, null];
 }
 
 export default Board;
